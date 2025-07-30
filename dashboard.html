@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Javawockee User Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+      background: #1f1f1f;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    h1 {
+      color: #ff006e;
+    }
+    .referral-box {
+      background: #292929;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      word-break: break-all;
+    }
+    button {
+      padding: 0.6rem 1.2rem;
+      background-color: #ff006e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .points {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+    a.button {
+      display: block;
+      background: #00b4d8;
+      color: white;
+      text-decoration: none;
+      margin: 1rem 0;
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, [Username]</h1>
+
+    <div class="points">
+      ⭐ Points: <strong id="points">120</strong>
+    </div>
+
+    <h2>Your Referral Code</h2>
+   <div class="referral-box" id="referralCode">https://grabtap.com/c/itsjoesmama?ref=itsjoesmama</div>
+    
+    <button onclick="copyReferral()">Copy Referral Link</button>
+
+    <a href="submit.html" class="button">📤 Submit Proof</a>
+    <a href="rewards.html" class="button">🎁 Redeem Rewards</a>
+    <a href="https://grabtap.com/c/itsjoesmama" target="_blank" class="button">🚀 Visit GrabTap Community</a>
+  </div>
+
+  <script>
+    function copyReferral() {
+      const text = document.getElementById("referralCode").textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Referral link copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
